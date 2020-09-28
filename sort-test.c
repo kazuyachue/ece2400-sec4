@@ -23,6 +23,17 @@ void test_case_1_basic()
   ECE2400_CHECK_INT_EQ( b, 9 );
 }
 
+void test_case_2()
+{
+  printf("\n%s\n", __func__  );
+
+  int a = 9;
+  int b = 5;
+  sort( &a, &b );
+  ECE2400_CHECK_INT_EQ( a, 5 );
+  ECE2400_CHECK_INT_EQ( b, 9 );
+}
+
 int main( int argc, char* argv[] )
 {
   __n = ( argc == 1 ) ? 0 : atoi( argv[1] );
@@ -30,6 +41,9 @@ int main( int argc, char* argv[] )
   if ( (__n <= 0) || (__n == 1) )
     test_case_1_basic();
 
+  if ( (__n <= 0) || (__n == 2) )
+    test_case_2();
+  
   printf( "\n" );
   return __failed;
 }
